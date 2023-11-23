@@ -5,12 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="86c1b2f1-b259-4736-9f80-c38a4d66d576" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/sprint1/sprint1/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/sprint1/sprint1/settings.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sprint1.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sprint1/submitData/resources.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sprint1/submitData/services.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sprint1/submitData/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/sprint1/submitData/models.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -35,8 +48,9 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "submitData",
-    "last_opened_file_path": "C:/Users/ololo/OneDrive/Рабочий стол/Обучение Python/sprintsSkillFactory/sprintsSkillFactory"
+    "last_opened_file_path": "C:/Users/ololo/OneDrive/Рабочий стол/pereval_beta-main"
   }
 }]]></component>
   <component name="RecentsManager">
