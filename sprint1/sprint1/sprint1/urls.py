@@ -22,6 +22,9 @@ from submitData import views
 
 router = routers.DefaultRouter()
 router.register(r'users', views.UsersViewset)
+router.register(r'coords', views.CoordinatesViewset)
+router.register(r'level', views.LevelsViewset)
+router.register(r'images', views.ImagesViewest)
 
 
 urlpatterns = [
