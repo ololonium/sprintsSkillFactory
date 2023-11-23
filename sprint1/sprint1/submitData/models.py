@@ -5,10 +5,10 @@ from .services import get_path_upload_photos
 
 class Users(models.Model):
     email = models.EmailField()
-    fam = models.TextField(max_length=255, verbose_name='Фамилия')
-    name = models.TextField(max_length=255, verbose_name='Имя')
-    otc = models.TextField(max_length=255, verbose_name='Отчество')
-    phone = models.TextField(max_length=255, verbose_name='Контактный телефон')
+    fam = models.TextField(max_length=64, verbose_name='Фамилия')
+    name = models.TextField(max_length=64, verbose_name='Имя')
+    otc = models.TextField(max_length=64, verbose_name='Отчество')
+    phone = models.TextField(max_length=64, verbose_name='Контактный телефон')
 
     def __str__(self):
         return f'{self.fam} {self.name} {self.email}'
