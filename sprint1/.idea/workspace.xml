@@ -8,7 +8,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sprint1/sprint1/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/sprint1/sprint1/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sprint1/submitData/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/sprint1/submitData/serializers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sprint1/submitData/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/sprint1/submitData/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,5 +64,9 @@
       <updated>1700660594868</updated>
     </task>
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Add Pereval serializer&#10;&#10;Added pereval serializer, route" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Pereval serializer&#10;&#10;Added pereval serializer, route" />
   </component>
 </project>

@@ -31,21 +31,21 @@ class PerevalSerializer(WritableNestedModelSerializer):
     user = UsersSerializer()
     coordinates = CoordinatesSerializer()
     level = LevelsSerializer(allow_null=True)
-    images = ImagesSerializer(many=True)
+    images = ImagesSerializer(many=True)# убрать для корректного добавления перевала, а затем изображения через HTML
 
     class Meta:
         model = Pereval
         fields = (
-            'add_time', 'beauty_title', 'title', 'other_titles', 'connect', 'user', 'coordinates', 'level', 'images')
+            'add_time', 'beauty_title', 'title', 'other_titles', 'connect', 'user', 'coordinates', 'level', 'images')# убрать 'images' для корректного добавления перевала, а затем изображения через HTML
         read_only_fields = ['status']
 
     def create(self, validated_data, **kwargs):
         user = validated_data.pop('user')
         coordinates = validated_data.pop('coordinates')
         level = validated_data.pop('level')
-        images = validated_data.pop('images')
+        images = validated_data.pop('images')# убрать для корректного добавления перевала, а затем изображения через HTML
 
-        # проверка уникальности пользователя
+
         pick_user = Users.objects.filter(email=user['email'])
         if pick_user.exists():
             users_serializer = UsersSerializer(data=user)
@@ -58,9 +58,9 @@ class PerevalSerializer(WritableNestedModelSerializer):
         level = Levels.objects.create(**level)
         pereval = Pereval.objects.create(**validated_data, user=user, coordinates=coordinates, level=level, status='new')
 
-        for image in images:
-            data = image('data')
-            title = image('title')
-            Images.objects.create(pereval=pereval, data=data, title=title)
+        for image in images:# убрать для корректного добавления перевала, а затем изображения через HTML
+            data = image('data')# убрать для корректного добавления перевала, а затем изображения через HTML
+            title = image('title')# убрать для корректного добавления перевала, а затем изображения через HTML
+            Images.objects.create(pereval=pereval, data=data, title=title)# убрать для корректного добавления перевала, а затем изображения через HTML
 
         return pereval
