@@ -1,6 +1,6 @@
 from .models import *
 from rest_framework import serializers
-#from drf_writable_nested import WritableNestedModelSerializer
+from drf_writable_nested import WritableNestedModelSerializer
 
 
 class UsersSerializer(serializers.HyperlinkedModelSerializer):
@@ -25,3 +25,42 @@ class ImagesSerializer(serializers.ModelSerializer):
     class Meta:
         model = Images
         fields = ['pereval', 'data', 'title', ]
+
+
+class PerevalSerializer(WritableNestedModelSerializer):
+    user = UsersSerializer()
+    coordinates = CoordinatesSerializer()
+    level = LevelsSerializer(allow_null=True)
+    images = ImagesSerializer(many=True)
+
+    class Meta:
+        model = Pereval
+        fields = (
+            'add_time', 'beauty_title', 'title', 'other_titles', 'connect', 'user', 'coordinates', 'level', 'images')
+        read_only_fields = ['status']
+
+    def create(self, validated_data, **kwargs):
+        user = validated_data.pop('user')
+        coordinates = validated_data.pop('coordinates')
+        level = validated_data.pop('level')
+        images = validated_data.pop('images')
+
+        # проверка уникальности пользователя
+        pick_user = Users.objects.filter(email=user['email'])
+        if pick_user.exists():
+            users_serializer = UsersSerializer(data=user)
+            users_serializer.is_valid(raise_exception=True)
+            user = users_serializer.save()
+        else:
+            user = Users.objects.create(**user)
+
+        coordinates = Coordinates.objects.create(**coordinates)
+        level = Levels.objects.create(**level)
+        pereval = Pereval.objects.create(**validated_data, user=user, coordinates=coordinates, level=level, status='new')
+
+        for image in images:
+            data = image('data')
+            title = image('title')
+            Images.objects.create(pereval=pereval, data=data, title=title)
+
+        return pereval

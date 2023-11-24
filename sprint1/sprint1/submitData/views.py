@@ -1,6 +1,6 @@
 from rest_framework import viewsets
-from .serializers import UsersSerializer, CoordinatesSerializer, LevelsSerializer, ImagesSerializer
-from .models import Users, Coordinates, Levels, Images
+from .serializers import UsersSerializer, CoordinatesSerializer, LevelsSerializer, ImagesSerializer, PerevalSerializer
+from .models import Users, Coordinates, Levels, Images, Pereval
 
 
 class UsersViewset(viewsets.ModelViewSet):
@@ -21,3 +21,8 @@ class LevelsViewset(viewsets.ModelViewSet):
 class ImagesViewest(viewsets.ModelViewSet):
     queryset = Images.objects.all()
     serializer_class = ImagesSerializer
+
+
+class PerevalViewest(viewsets.ModelViewSet):
+   queryset = Pereval.objects.all()
+   serializer_class = PerevalSerializer

@@ -21,11 +21,11 @@ from submitData import views
 
 
 router = routers.DefaultRouter()
-router.register(r'users', views.UsersViewset)
-router.register(r'coords', views.CoordinatesViewset)
-router.register(r'level', views.LevelsViewset)
+# router.register(r'users', views.UsersViewset)
+# router.register(r'coordinates', views.CoordinatesViewset)
+# router.register(r'levels', views.LevelsViewset)
 router.register(r'images', views.ImagesViewest)
-
+router.register(r'pereval', views.PerevalViewest)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
