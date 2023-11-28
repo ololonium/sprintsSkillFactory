@@ -18,19 +18,25 @@ from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
 from submitData import views
+from drf_spectacular.views import SpectacularAPIView, SpectacularRedocView, SpectacularSwaggerView
 
 
 router = routers.DefaultRouter()
-# router.register(r'users', views.UsersViewset)
-# router.register(r'coordinates', views.CoordinatesViewset)
-# router.register(r'levels', views.LevelsViewset)
-router.register(r'pereval', views.PerevalViewest)
-router.register(r'images', views.ImagesViewest)
+# router.register(r'users', views.UsersViewSet)
+# router.register(r'coordinates', views.CoordinatesViewSet)
+# router.register(r'levels', views.LevelsViewSet)
+router.register(r'pereval', views.PerevalViewSet)
+router.register(r'images', views.ImagesViewSet)
+
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(router.urls)),
     path('api/submitData/', include(router.urls)),
-    path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
+    path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    path('api/schema/', SpectacularAPIView.as_view(), name='schema'),
+    # Optional UI:
+    path('api/schema/swagger-ui/', SpectacularSwaggerView.as_view(url_name='schema'), name='swagger-ui'),
+    path('api/schema/redoc/', SpectacularRedocView.as_view(url_name='schema'), name='redoc'),
 ]
